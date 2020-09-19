@@ -22,6 +22,14 @@ $colorHover: #C52F06;
   @include textFont;
 }
 
+.button{
+  @include button;
+
+  &__icon{
+    margin-right: 17px;
+  }
+}
+
 a{
   text-decoration: none;
 }
@@ -31,6 +39,67 @@ a:active, a:focus { outline: none; }
 input, textarea {outline:none;}
 input:active, textarea:active {outline:none;}
 :focus {outline:none;}
+
+//Modal
+//---------------------------
+
+.modal{
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $colorWhite;
+  z-index: 999;
+
+  &__close{
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    cursor: pointer;
+  }
+}
+
+.case1, .case2{
+  display: none;
+
+  .container{
+    position: relative;
+    padding-top: 130px;
+    padding-bottom: 70px;
+  }
+
+  &__title{
+    margin-bottom: 68px;
+  }
+
+  &__description{
+    font-size: 36px;
+    margin-bottom: 30px;
+
+    >a{
+      color: $colorOrange;
+      transition: color 300ms;
+
+      &:hover{
+        color: $colorHover;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__img{
+    cursor: pointer;
+    margin-bottom: 70px;
+    max-width: 100%;
+  }
+
+  &__button{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 //Navbar
 //---------------------------
@@ -116,6 +185,7 @@ input:active, textarea:active {outline:none;}
 
   .container {
     padding-top: 130px;
+    padding-bottom: 130px;
   }
 
   &__title{
@@ -165,7 +235,7 @@ input:active, textarea:active {outline:none;}
 .portfolio{
   position: relative;
   width: 100%;
-  transition: background-color 250ms;
+  transition: background-color 500ms;
   background-color: $colorDark;
 
   &__bg_leti-studio{
@@ -177,7 +247,7 @@ input:active, textarea:active {outline:none;}
     bottom: 0;
     z-index: -1;
     visibility: hidden;
-    transition: visibility 250ms;
+    transition: visibility 500ms;
   }
 
   &__bg_lightroom{
@@ -189,7 +259,7 @@ input:active, textarea:active {outline:none;}
     bottom: 0;
     z-index: -2;
     visibility: hidden;
-    transition: visibility 250ms;
+    transition: visibility 500ms;
   }
 
   .container {

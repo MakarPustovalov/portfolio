@@ -36,6 +36,30 @@
   color: #2C2C2C;
 }
 
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 360px;
+  height: 75px;
+  background-color: #D54A24;
+  transition: background-color 300ms;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  color: #ffffff;
+  text-align: center;
+}
+.button:hover {
+  background-color: #C52F06;
+}
+.button__icon {
+  margin-right: 17px;
+}
+
 a {
   text-decoration: none;
 }
@@ -54,6 +78,56 @@ input:active, textarea:active {
 
 :focus {
   outline: none;
+}
+
+.modal {
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  z-index: 999;
+}
+.modal__close {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.case1, .case2 {
+  display: none;
+}
+.case1 .container, .case2 .container {
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 70px;
+}
+.case1__title, .case2__title {
+  margin-bottom: 68px;
+}
+.case1__description, .case2__description {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+.case1__description > a, .case2__description > a {
+  color: #D54A24;
+  transition: color 300ms;
+}
+.case1__description > a:hover, .case2__description > a:hover {
+  color: #C52F06;
+  text-decoration: underline;
+}
+.case1__img, .case2__img {
+  cursor: pointer;
+  margin-bottom: 70px;
+  max-width: 100%;
+}
+.case1__button, .case2__button {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .navbar {
@@ -125,6 +199,7 @@ input:active, textarea:active {
 }
 .offers .container {
   padding-top: 130px;
+  padding-bottom: 130px;
 }
 .offers__title {
   margin-bottom: 25px;
@@ -162,7 +237,7 @@ input:active, textarea:active {
 .portfolio {
   position: relative;
   width: 100%;
-  transition: background-color 250ms;
+  transition: background-color 500ms;
   background-color: #1F1F1F;
 }
 .portfolio__bg_leti-studio {
@@ -177,7 +252,7 @@ input:active, textarea:active {
   bottom: 0;
   z-index: -1;
   visibility: hidden;
-  transition: visibility 250ms;
+  transition: visibility 500ms;
 }
 .portfolio__bg_lightroom {
   position: absolute;
@@ -191,7 +266,7 @@ input:active, textarea:active {
   bottom: 0;
   z-index: -2;
   visibility: hidden;
-  transition: visibility 250ms;
+  transition: visibility 500ms;
 }
 .portfolio .container {
   padding-top: 130px;

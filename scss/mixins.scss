@@ -37,6 +37,10 @@ $colorHover: #C52F06;
 }
 
 @mixin button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
   width: 360px;
   height: 75px;
   background-color: $colorOrange;
