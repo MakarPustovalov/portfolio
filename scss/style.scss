@@ -114,6 +114,13 @@ input:active, textarea:active {outline:none;}
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
+  }
+
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__close{
@@ -138,18 +145,25 @@ input:active, textarea:active {outline:none;}
 .pagination{
   z-index: 800;
   position: fixed;
-  top: 50%;
+  top: calc(50% - 61px);
   right: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  >a{
+    margin-bottom: 14px;
+    
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
 
   &__bullet{
     width: 12px;
     height: 12px;
     border: 4px solid $colorWhite;
     border-radius: 50%;
-    margin-bottom: 14px;
     transition: all 300ms;
   }
 }
@@ -300,7 +314,7 @@ input:active, textarea:active {outline:none;}
     bottom: 0;
     z-index: -1;
     visibility: hidden;
-    transition: visibility 500ms;
+    transition: visibility 100ms;
   }
 
   &__bg_lightroom{
@@ -312,23 +326,23 @@ input:active, textarea:active {outline:none;}
     bottom: 0;
     z-index: -2;
     visibility: hidden;
-    transition: visibility 500ms;
+    transition: visibility 100ms;
   }
 
   .container {
     padding-top: 130px;
-    padding-bottom: 320px;
+    padding-bottom: 430px;
   }
 
   &__title{
     color: $colorOrange;
-    margin-bottom: 122px;
+    margin-bottom: 185px;
   }
 
   &__link{
     display: inline-block;
     color: $colorOrange;
-    font-size: 58px;
+    font-size: 38px;
     transition: color 300ms;
     cursor: pointer;
 
@@ -347,7 +361,7 @@ input:active, textarea:active {outline:none;}
     >.title{
       color: $colorOrange;
       transition: color 300ms;
-      font-size: 58px;
+      font-size: 38px;
     }
   }
 }

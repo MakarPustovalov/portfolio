@@ -44,25 +44,25 @@ $(document).ready(function() {
 
   $(window).on("scroll", () => {
 
-    if (($("#header").offset().top) <= (($(window).scrollTop()) + 370) && $("#header-end").offset().top > (($(window).scrollTop()) + 370)) {
+    if (($("#header").offset().top) <= (($(window).scrollTop()) + 490) && $("#header-end").offset().top > (($(window).scrollTop()) + 370)) {
 
       disableBullet($(".pagination__bullet"));
       setActiveBullet($(".bullet-header"));
       setLightBulletBorder();
 
-    } else if (($("#offers").offset().top) <= (($(window).scrollTop()) + 370) && $("#offers-end").offset().top > (($(window).scrollTop()) + 370)) {
+    } else if (($("#offers").offset().top) <= (($(window).scrollTop()) + 490) && $("#offers-end").offset().top > (($(window).scrollTop()) + 370)) {
 
       disableBullet($(".pagination__bullet"));
       setActiveBullet($(".bullet-offers"));
       setDarkBulletBorder();
 
-    } else if (($("#portfolio").offset().top) <= (($(window).scrollTop()) + 370) && $("#portfolio-end").offset().top > (($(window).scrollTop()) + 370)) {
+    } else if (($("#portfolio").offset().top) <= (($(window).scrollTop()) + 490) && $("#portfolio-end").offset().top > (($(window).scrollTop()) + 370)) {
 
       disableBullet($(".pagination__bullet"));
       setActiveBullet($(".bullet-portfolio"));
       setLightBulletBorder();
 
-    } else if (($("#contacts").offset().top) <= (($(window).scrollTop()) + 370)) {
+    } else if (($("#contacts").offset().top) <= (($(window).scrollTop()) + 490)) {
 
       disableBullet($(".pagination__bullet"));
       setActiveBullet($(".bullet-contacts"));
@@ -78,22 +78,22 @@ $(document).ready(function() {
 
   const portfolio1 = document.querySelector("#portfolio1");
 
-  portfolio1.addEventListener("mouseover", function() {
+  portfolio2.addEventListener("mouseover", function() {
     $(".portfolio").css("background-color", "rgba(0, 0, 0, 0.8)");
     $(".portfolio__bg_leti-studio").css("visibility", "visible");
   });
 
-  portfolio1.addEventListener("mouseout", function() {
+  portfolio2.addEventListener("mouseout", function() {
     $(".portfolio").css("background-color", "#1F1F1F");
     $(".portfolio__bg_leti-studio").css("visibility", "hidden");
   });
 
-  portfolio2.addEventListener("mouseover", function() {
+  portfolio1.addEventListener("mouseover", function() {
     $(".portfolio").css("background-color", "rgba(0, 0, 0, 0.8)");
     $(".portfolio__bg_lightroom").css("visibility", "visible");
   });
 
-  portfolio2.addEventListener("mouseout", function() {
+  portfolio1.addEventListener("mouseout", function() {
     $(".portfolio").css("background-color", "#1F1F1F");
     $(".portfolio__bg_lightroom").css("visibility", "hidden");
   });

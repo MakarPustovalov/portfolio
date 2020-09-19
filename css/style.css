@@ -145,6 +145,12 @@ input:active, textarea:active {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .form__close {
   right: auto;
@@ -163,18 +169,23 @@ input:active, textarea:active {
 .pagination {
   z-index: 800;
   position: fixed;
-  top: 50%;
+  top: calc(50% - 61px);
   right: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.pagination > a {
+  margin-bottom: 14px;
+}
+.pagination > a:last-child {
+  margin-bottom: 0;
 }
 .pagination__bullet {
   width: 12px;
   height: 12px;
   border: 4px solid #ffffff;
   border-radius: 50%;
-  margin-bottom: 14px;
   transition: all 300ms;
 }
 
@@ -300,7 +311,7 @@ input:active, textarea:active {
   bottom: 0;
   z-index: -1;
   visibility: hidden;
-  transition: visibility 500ms;
+  transition: visibility 100ms;
 }
 .portfolio__bg_lightroom {
   position: absolute;
@@ -314,20 +325,20 @@ input:active, textarea:active {
   bottom: 0;
   z-index: -2;
   visibility: hidden;
-  transition: visibility 500ms;
+  transition: visibility 100ms;
 }
 .portfolio .container {
   padding-top: 130px;
-  padding-bottom: 320px;
+  padding-bottom: 430px;
 }
 .portfolio__title {
   color: #D54A24;
-  margin-bottom: 122px;
+  margin-bottom: 185px;
 }
 .portfolio__link {
   display: inline-block;
   color: #D54A24;
-  font-size: 58px;
+  font-size: 38px;
   transition: color 300ms;
   cursor: pointer;
 }
@@ -343,7 +354,7 @@ input:active, textarea:active {
 .portfolio__link > .title {
   color: #D54A24;
   transition: color 300ms;
-  font-size: 58px;
+  font-size: 38px;
 }
 
 .contacts {
