@@ -38,7 +38,7 @@ input:active, textarea:active {outline:none;}
 .navbar{
   z-index: 100;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 42px;
 
   &__links{
@@ -156,5 +156,75 @@ input:active, textarea:active {outline:none;}
 
   &__item-description{
     font-size: 24px;
+  }
+}
+
+//Portfolio
+//---------------------------
+
+.portfolio{
+  position: relative;
+  width: 100%;
+  transition: background-color 250ms;
+  background-color: $colorDark;
+
+  &__bg_leti-studio{
+    position: absolute;
+    @include bgImage ("../assets/img/portfolio/Leti-Studio-hover.jpg");
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    visibility: hidden;
+    transition: visibility 250ms;
+  }
+
+  &__bg_lightroom{
+    position: absolute;
+    @include bgImage ("../assets/img/portfolio/LightRoom-hover.jpg");
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    visibility: hidden;
+    transition: visibility 250ms;
+  }
+
+  .container {
+    padding-top: 130px;
+    padding-bottom: 320px;
+  }
+
+  &__title{
+    color: $colorOrange;
+    margin-bottom: 122px;
+  }
+
+  &__link{
+    display: inline-block;
+    color: $colorOrange;
+    font-size: 58px;
+    transition: color 300ms;
+    cursor: pointer;
+
+    &:nth-child(1) {
+      margin-bottom: 64px;
+    }
+
+    &:hover{
+      color: $colorHover;
+
+      >.title{
+        color: $colorHover;
+      }
+    }
+
+    >.title{
+      color: $colorOrange;
+      transition: color 300ms;
+      font-size: 58px;
+    }
   }
 }

@@ -59,7 +59,7 @@ input:active, textarea:active {
 .navbar {
   z-index: 100;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 42px;
 }
 .navbar__links {
@@ -157,4 +157,68 @@ input:active, textarea:active {
 }
 .offers__item-description {
   font-size: 24px;
+}
+
+.portfolio {
+  position: relative;
+  width: 100%;
+  transition: background-color 250ms;
+  background-color: #1F1F1F;
+}
+.portfolio__bg_leti-studio {
+  position: absolute;
+  background-image: url("../assets/img/portfolio/Leti-Studio-hover.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  visibility: hidden;
+  transition: visibility 250ms;
+}
+.portfolio__bg_lightroom {
+  position: absolute;
+  background-image: url("../assets/img/portfolio/LightRoom-hover.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  visibility: hidden;
+  transition: visibility 250ms;
+}
+.portfolio .container {
+  padding-top: 130px;
+  padding-bottom: 320px;
+}
+.portfolio__title {
+  color: #D54A24;
+  margin-bottom: 122px;
+}
+.portfolio__link {
+  display: inline-block;
+  color: #D54A24;
+  font-size: 58px;
+  transition: color 300ms;
+  cursor: pointer;
+}
+.portfolio__link:nth-child(1) {
+  margin-bottom: 64px;
+}
+.portfolio__link:hover {
+  color: #C52F06;
+}
+.portfolio__link:hover > .title {
+  color: #C52F06;
+}
+.portfolio__link > .title {
+  color: #D54A24;
+  transition: color 300ms;
+  font-size: 58px;
 }
