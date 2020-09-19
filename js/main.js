@@ -18,6 +18,62 @@ $(document).ready(function() {
     })
   }
 
+  //Pagination
+
+  function setActiveBullet (elem) {
+    $(elem).css("background-color", "#C52F06");
+  }
+
+  function disableBullet (elem) {
+    $(elem).each(function () {
+      $(this).css("background-color", "transparent");
+    });
+  }
+
+  function setLightBulletBorder () {
+    $(".pagination__bullet").each(function () {
+      $(this).css("border-color", "#ffffff");
+    });
+  }
+
+  function setDarkBulletBorder () {
+    $(".pagination__bullet").each(function () {
+      $(this).css("border-color", "#2c2c2c");
+    });
+  }
+
+  $(window).on("scroll", () => {
+
+    if (($("#header").offset().top) <= (($(window).scrollTop()) + 370) && $("#header-end").offset().top > (($(window).scrollTop()) + 370)) {
+
+      disableBullet($(".pagination__bullet"));
+      setActiveBullet($(".bullet-header"));
+      setLightBulletBorder();
+
+    } else if (($("#offers").offset().top) <= (($(window).scrollTop()) + 370) && $("#offers-end").offset().top > (($(window).scrollTop()) + 370)) {
+
+      disableBullet($(".pagination__bullet"));
+      setActiveBullet($(".bullet-offers"));
+      setDarkBulletBorder();
+
+    } else if (($("#portfolio").offset().top) <= (($(window).scrollTop()) + 370) && $("#portfolio-end").offset().top > (($(window).scrollTop()) + 370)) {
+
+      disableBullet($(".pagination__bullet"));
+      setActiveBullet($(".bullet-portfolio"));
+      setLightBulletBorder();
+
+    } else if (($("#contacts").offset().top) <= (($(window).scrollTop()) + 370)) {
+
+      disableBullet($(".pagination__bullet"));
+      setActiveBullet($(".bullet-contacts"));
+      setDarkBulletBorder();
+
+    } else {
+      disableBullet($(".pagination__bullet"));
+    }
+
+  })
+
   //Смена фона в portfolio
 
   const portfolio1 = document.querySelector("#portfolio1");

@@ -132,6 +132,28 @@ input:active, textarea:active {outline:none;}
   }
 }
 
+//Pagination
+//---------------------------
+
+.pagination{
+  z-index: 800;
+  position: fixed;
+  top: 50%;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__bullet{
+    width: 12px;
+    height: 12px;
+    border: 4px solid $colorWhite;
+    border-radius: 50%;
+    margin-bottom: 14px;
+    transition: all 300ms;
+  }
+}
+
 //Navbar
 //---------------------------
 
@@ -326,6 +348,45 @@ input:active, textarea:active {outline:none;}
       color: $colorOrange;
       transition: color 300ms;
       font-size: 58px;
+    }
+  }
+}
+
+//Portfolio
+//---------------------------
+
+.contacts{
+  width: 100%;
+  background-color: $colorWhite;
+
+  .container{
+    padding-top: 130px;
+    padding-bottom: 310px;
+  }
+
+  &__title{
+    margin-bottom: 90px;
+  }
+
+  &__subtitle{
+    font-size: 34px;
+    margin-bottom: 90px;
+
+    &:nth-child(2){
+      margin-bottom: 36px;
+    }
+  }
+
+  &__row{
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  &__button{
+    margin-right: 30px;
+
+    &:nth-child(2){
+      margin-right: 0;
     }
   }
 }
