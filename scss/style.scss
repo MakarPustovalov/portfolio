@@ -6,6 +6,10 @@ $colorWhite: #ffffff;
 $colorOrange: #D54A24;
 $colorHover: #C52F06;
 
+header, section{
+  overflow: hidden;
+}
+
 .container{
   max-width: 1140px;
   padding-left: 30px;
