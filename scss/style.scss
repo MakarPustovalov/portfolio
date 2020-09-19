@@ -26,6 +26,12 @@ a{
   text-decoration: none;
 }
 
+a:active, a:focus { outline: none; }
+
+input, textarea {outline:none;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+
 //Navbar
 //---------------------------
 
@@ -53,7 +59,7 @@ a{
 
 .header{
   position: relative;
-  @include bgImage ('../assets/img/header/Bg-layer.jpg');
+  @include bgImage ('../assets/img/header/Bg.jpg');
   background-attachment: fixed;
   height: 100vh;
   width: 100%;
@@ -92,13 +98,63 @@ a{
     position: absolute;
     bottom: 46px;
     left: calc(50% - 23px);
+    opacity: 0.5;
+    transition: opacity 300ms;
+
+    &:hover{
+      opacity: 1;
+    }
   }
 }
 
-.photo{
-  position: absolute;
-  bottom: 0;
-  left: 12.5%;
-  max-width: 29vw;
-  max-height: 89vh;
+//Offers
+//---------------------------
+
+.offers{
+  background-color: $colorWhite;
+  width: 100%;
+
+  .container {
+    padding-top: 130px;
+  }
+
+  &__title{
+    margin-bottom: 25px;
+  }
+
+  &__subtitle{
+    font-size: 34px;
+    margin-bottom: 105px;
+  }
+
+  &__row{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item{
+    margin-bottom: 60px;
+    max-width: 520px;
+  }
+
+  &__item-heading{
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  &__item-icon{
+    width: 70px;
+    height: 70px;
+    margin-right: 27px;
+  }
+
+  &__item-title{
+    display: inline-block;
+    font-size: 24px;
+  }
+
+  &__item-description{
+    font-size: 24px;
+  }
 }
