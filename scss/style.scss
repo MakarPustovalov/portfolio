@@ -30,6 +30,10 @@ $colorHover: #C52F06;
   }
 }
 
+.form-button{
+  cursor: pointer;
+}
+
 a{
   text-decoration: none;
 }
@@ -98,6 +102,33 @@ input:active, textarea:active {outline:none;}
   &__button{
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+.form{
+  z-index: 1010;
+  display: none;
+
+  .container{
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__close{
+    right: auto;
+    left: 30px;
+  }
+
+  &__input{
+    font-size: 24px;
+    line-height: 170%;
+    display: block;
+    margin-bottom: 52px;
+    border: none;
+    border-bottom: 2px solid $colorMain;
+    width: 460px;
   }
 }
 

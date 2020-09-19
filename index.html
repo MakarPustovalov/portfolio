@@ -21,7 +21,7 @@
           <li><a href="#offers" class="navbar__link text">Услуги</a></li>
           <li><a href="#portfolio" class="navbar__link text">Работы</a></li>
           <li><a href="#contacts" class="navbar__link text">Контакты</a></li>
-          <li><a href="" class="navbar__link text">Заказать</a></li>
+          <li><a class="navbar__link text form-button">Заказать</a></li>
         </ul>
 
       </div>
@@ -106,9 +106,9 @@
         <h3 class="portfolio__title title">Мои готовые проекты</h3>
 
         <ul class="portfolio__list">
-          <li id="portfolio1" class="portfolio__link text">Сайт-визитка для студии йоги<br>
+          <li id="portfolio2" class="portfolio__link text">Сайт-визитка для студии йоги<br>
             <span class="title">LETI Studio</span></li>
-          <li id="portfolio2" class="portfolio__link text">Landing page для салона света<br>
+          <li id="portfolio1" class="portfolio__link text">Landing page для салона света<br>
             <span class="title">LightRoom</span></li>
         </ul>
 
@@ -122,9 +122,9 @@
 
     </section>
 
-    <section class="modal case1 animated fadeOutLeft">
+    <section class="modal case1 animated slideOutLeft">
       <div class="container">
-        <div class="modal__close"><img src="assets/img/close.svg" alt="" width="30px" height="30px"></div>
+        <div class="modal__close case1__close"><img src="assets/img/close.svg" alt="" width="30px" height="30px"></div>
         <h3 class="case1__title title">Landing page для салона света</h3>
         <p class="case1__description text">Разработали сайт салона света <a href="http://lightroom.su/" target="_blank" rel="noreferrer">LightRoom</a>.<br>
           Над дизайном сайта работала <a href="https://vk.com/dianavack" target="_blank" rel="noreferrer">Диана Вакуленко</a>.<br>
@@ -136,15 +136,15 @@
             <img src="assets/img/portfolio/Lightroom-ss.jpg" alt="Lightroom" class="case1__img">
           </a>
 
-          <a href="" class="case1__button button text button-mail">
+          <a class="case1__button button text button-mail form-button">
             <img src="assets/img/contacts/mail.svg" alt="Mail" class="button__icon"> Оставить заявку
           </a>
       </div>
     </section>
 
-    <section class="modal case2 animated fadeInLeft">
+    <section class="modal case2 animated slideInRight">
       <div class="container">
-        <div class="modal__close"><img src="assets/img/close.svg" alt="" width="30px" height="30px"></div>
+        <div class="modal__close case2__close"><img src="assets/img/close.svg" alt="" width="30px" height="30px"></div>
         <h3 class="case2__title title">Сайт-визитка для студии йоги</h3>
         <p class="case2__description text">Разработал адаптивный сайт для студии йоги и<br>
           аэройоги <a href="http://leti-studio.ru/" target="_blank" rel="noreferrer">LETI Studio</a>.<br>
@@ -156,9 +156,23 @@
             <img src="assets/img/portfolio/LetiStudio-ss.jpg" alt="LETI Studio" class="case2__img">
           </a>
 
-          <a href="" class="case2__button button text button-mail">
+          <a class="case2__button button text button-mail form-button">
             <img src="assets/img/contacts/mail.svg" alt="Mail" class="button__icon"> Оставить заявку
           </a>
+      </div>
+    </section>
+
+    <section class="modal form animated slideInLeft">
+      <div class="container">
+        <div class="modal__close form__close"><img src="assets/img/close.svg" alt="" width="30px" height="30px"></div>
+
+        <form class="form__wrapper" action="" method="POST">
+          <input type="text" name="name" class="form__input text" placeholder="Ваше имя">
+          <input type="email" name="email" class="form__input text" placeholder="Ваш e-mail">
+          <input type="text" name="subj" class="form__input text" placeholder="Какая тема вас интересует?">
+          <button type="submit" class="form__button button"><img src="assets/img/contacts/mail.svg" alt="Mail" class="button__icon"> Оставить заявку</button>
+        </form>
+
       </div>
     </section>
 

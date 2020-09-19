@@ -47,6 +47,8 @@ $colorHover: #C52F06;
   transition: background-color 300ms;
   @include textFont (20px, $colorWhite);
   text-align: center;
+  border: none;
+  cursor: pointer;
 
   &:hover{
     background-color: $colorHover;

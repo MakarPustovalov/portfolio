@@ -45,28 +45,66 @@ $(document).ready(function() {
   //Модальные блоки
 
   const case1 = document.querySelector(".case1"),
-        case2 = document.querySelector(".case2");
+        case2 = document.querySelector(".case2"),
+        form = document.querySelector(".form"),
+        case1Close = document.querySelector(".case1__close"),
+        case2Close = document.querySelector(".case2__close"),
+        formClose = document.querySelector(".form__close");
 
   portfolio1.addEventListener("click", function() {
-    $(case1).removeClass("fadeOutLeft");
-    $(case1).addClass("fadeInLeft");
+    $(case1).removeClass("slideOutLeft");
+    $(case1).addClass("slideInLeft");
     $(case1).css("display", "block");
+    $("body").css("overflow", "hidden");
     setTimeout(() => {
-      $(case1).removeClass("fadeInLeft");
+      $(case1).removeClass("slideInLeft");
     }, 1000)
   })
 
   portfolio2.addEventListener("click", function() {
+    $(case2).removeClass("slideOutRight");
+    $(case2).addClass("slideInRight");
     $(case2).css("display", "block");
+    $("body").css("overflow", "hidden");
+    setTimeout(() => {
+      $(case2).removeClass("slideInRight");
+    }, 1000)
   })
 
-  $(".modal__close").each(function () {
-    $(this).click(function() {
-      $(".modal").each(function () {
-        $(case1).addClass("fadeOutLeft");
-        $(case1).css("display", "none");
-      })
+  case1Close.addEventListener("click", function() {
+    $(case1).addClass("slideOutLeft");
+    $("body").css("overflow", "auto");
+    setTimeout(() => {
+      $(case1).removeClass("slideInLeft");
+    }, 200)
+  })
+
+  case2Close.addEventListener("click", function() {
+    $(case2).addClass("slideOutRight");
+    $("body").css("overflow", "auto");
+    setTimeout(() => {
+      $(case2).removeClass("slideInRight");
+    }, 200)
+  })
+
+  $(".form-button").each(function(){
+    $(this).click(() => {
+      $(form).removeClass("slideOutLeft");
+      $(form).addClass("slideInLeft");
+      $(form).css("display", "block");
+      $("body").css("overflow", "hidden");
+      setTimeout(() => {
+        $(form).removeClass("slideInLeft");
+      }, 1000)
     })
+  })
+
+  formClose.addEventListener("click", function() {
+    $(form).addClass("slideOutLeft");
+    $("body").css("overflow", "auto");
+    setTimeout(() => {
+      $(form).removeClass("slideInLeft");
+    }, 200)
   })
 
 })
