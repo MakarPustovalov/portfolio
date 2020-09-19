@@ -1,0 +1,58 @@
+$colorMain: #2C2C2C;
+$colorDark: #1F1F1F;
+$colorWhite: #ffffff;
+$colorOrange: #D54A24;
+$colorHover: #C52F06;
+
+@font-face {
+  font-family: 'PeaceSans';
+  src: url('../assets/fonts/PeaceSans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PeaceSans';
+  src: url('../assets/fonts/PeaceSans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin titleFont ($size: 48px, $color: #2C2C2C) {
+  font-family: PeaceSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $size;
+  line-height: 120%;
+  text-align: center;
+  color: $color;
+}
+
+@mixin textFont ($size: 28px, $color: #2C2C2C) {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: medium;
+  font-size: $size;
+  line-height: 120%;
+  color: $color;
+}
+
+@mixin button {
+  width: 360px;
+  height: 75px;
+  background-color: $colorOrange;
+  transition: background-color 300ms;
+  @include textFont (20px, $colorWhite);
+  text-align: center;
+
+  &:hover{
+    background-color: $colorHover;
+  }
+}
+
+@mixin bgImage ($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
