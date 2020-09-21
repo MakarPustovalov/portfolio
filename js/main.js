@@ -163,4 +163,62 @@ $(document).ready(function() {
     }, 200)
   })
 
+  //Мобильное меню
+
+  const menuModal = document.querySelector(".menu-modal"),
+        menuOverlay = document.querySelector(".menu-modal__overlay"),
+        menuBurger = document.querySelector(".menu-mobile__wrapper"),
+        menuBurgerLines = document.querySelector(".menu-mobile");
+
+  function setLightMenuMobile () {
+    $(menuBurgerLines).addClass("menu-mobile_light");
+    $(menuBurgerLines).removeClass("menu-mobile_dark");
+  }
+
+  function setDarkMenuMobile () {
+    $(menuBurgerLines).addClass("menu-mobile_dark");
+    $(menuBurgerLines).removeClass("menu-mobile_light");
+  }
+
+  $(window).on("scroll", () => {
+
+    if (($("#header").offset().top) <= (($(window).scrollTop()) + 20) && $("#header-end").offset().top > (($(window).scrollTop()) + 20) || // Большое и страшное условие для проверки
+    ($("#portfolio").offset().top) <= (($(window).scrollTop()) + 20) && $("#portfolio-end").offset().top > (($(window).scrollTop()) + 20)) { // нахождения верхней границы экрана в пределах нужных блоков
+
+      setLightMenuMobile()
+
+    } else {
+
+      setDarkMenuMobile()
+
+    }
+
+  })
+
+  menuBurger.addEventListener("click", function () {
+    $(menuModal).removeClass("fadeOutLeft");
+    $(menuModal).addClass("fadeInLeft");
+    $(menuOverlay).css("display", "block");
+    $(menuModal).css("display", "block");
+    setTimeout(() => {
+      $(menuModal).removeClass("fadeInLeft");
+    }, 400)
+  })
+
+  menuOverlay.addEventListener("click", function () {
+    $(menuModal).addClass("fadeOutLeft");
+    $(menuOverlay).css("display", "none");
+    setTimeout(() => {
+      $(menuModal).css("display", "none");
+    }, 200)
+  })
+
+  menuModal.addEventListener("click", function () {
+    $(menuModal).addClass("fadeOutLeft");
+    $(menuOverlay).css("display", "none");
+    setTimeout(() => {
+      $(menuModal).css("display", "none");
+    }, 200)
+  })
+
 })
