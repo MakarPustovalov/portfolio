@@ -25,6 +25,10 @@ $colorHover: #C52F06;
   font-size: $size;
   line-height: 120%;
   color: $color;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  };
 }
 
 @mixin textFont ($size: 28px, $color: #2C2C2C) {
@@ -34,6 +38,10 @@ $colorHover: #C52F06;
   font-size: $size;
   line-height: 120%;
   color: $color;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  };
 }
 
 @mixin button {
@@ -53,6 +61,12 @@ $colorHover: #C52F06;
   &:hover{
     background-color: $colorHover;
   }
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 50px;
+    font-size: 16px;
+  };
 }
 
 @mixin bgImage ($url) {
