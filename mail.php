@@ -35,7 +35,6 @@ $mail->AltBody = '';
 if(!$mail->send()) {
     echo 'Error';
 } else {
-    header('location: index.html');
-    echo "<script>alert('Спасибо! Ваша заявка успешно отправлена.')</script>";
+    header('location: thank-you.html');
 }
 ?>
