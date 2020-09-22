@@ -410,7 +410,7 @@ input:active, textarea:active {
 }
 .navbar__link {
   color: #ffffff;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: normal;
 }
 @media (max-width: 1120px) {
