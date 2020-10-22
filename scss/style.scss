@@ -376,6 +376,12 @@ input:active, textarea:active {outline:none;}
     color: $colorWhite;
     font-size: 22px;
     font-weight: normal;
+    transition: all 150ms;
+
+    &:hover{
+      text-decoration: underline;
+      color: gainsboro;
+    }
   }
 
   @media (max-width: 1120px) {

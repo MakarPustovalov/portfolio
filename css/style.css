@@ -412,6 +412,11 @@ input:active, textarea:active {
   color: #ffffff;
   font-size: 22px;
   font-weight: normal;
+  transition: all 150ms;
+}
+.navbar__link:hover {
+  text-decoration: underline;
+  color: gainsboro;
 }
 @media (max-width: 1120px) {
   .navbar {
