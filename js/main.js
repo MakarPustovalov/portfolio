@@ -76,72 +76,85 @@ $(document).ready(function() {
 
   //Смена фона в portfolio
 
-  const portfolio1 = document.querySelector("#portfolio1");
+  const portfolioLinks = document.querySelectorAll(".portfolio__link"),
+        portfolio = document.querySelector(".portfolio");
 
-  portfolio2.addEventListener("mouseover", function() {
-    $(".portfolio").css("background-color", "rgba(0, 0, 0, 0.8)");
-    $(".portfolio__bg_leti-studio").css("visibility", "visible");
-  });
+  function toggleBgColor() {
+    let color = portfolio.style.backgroundColor
+    if (color === "rgba(0, 0, 0, 0.8)") {
+      portfolio.style.backgroundColor = "#1F1F1F"
+    } else {
+      portfolio.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
+    }
+  }
 
-  portfolio2.addEventListener("mouseout", function() {
-    $(".portfolio").css("background-color", "#1F1F1F");
-    $(".portfolio__bg_leti-studio").css("visibility", "hidden");
-  });
+  function toggleBgImg(element) {
+    let bg = ".portfolio__bg_" + element.id;
+    bgElem = document.querySelector(bg)
+    if (bgElem) {
+      if (bgElem.style.visibility === "visible") {
+        bgElem.style.visibility = "hidden"
+      } else {
+        bgElem.style.visibility = "visible"
+      }
+    }
+  }
 
-  portfolio1.addEventListener("mouseover", function() {
-    $(".portfolio").css("background-color", "rgba(0, 0, 0, 0.8)");
-    $(".portfolio__bg_lightroom").css("visibility", "visible");
-  });
+  function linkHoverHandler(element) {
+    toggleBgColor();
+    toggleBgImg(element)
+  }
 
-  portfolio1.addEventListener("mouseout", function() {
-    $(".portfolio").css("background-color", "#1F1F1F");
-    $(".portfolio__bg_lightroom").css("visibility", "hidden");
+  portfolioLinks.forEach(element => {
+    element.addEventListener("mouseover", () => linkHoverHandler(element));
+    element.addEventListener("mouseout", () => linkHoverHandler(element));
   });
 
   //Модальные блоки
 
-  const case1 = document.querySelector(".case1"),
-        case2 = document.querySelector(".case2"),
+  const cases = document.querySelectorAll(".case"),
         form = document.querySelector(".form"),
-        case1Close = document.querySelector(".case1__close"),
-        case2Close = document.querySelector(".case2__close"),
+        closeButtons = document.querySelectorAll(".modal__close"),
         formClose = document.querySelector(".form__close");
 
-  portfolio1.addEventListener("click", function() {
-    $(case1).removeClass("slideOutLeft");
-    $(case1).addClass("slideInLeft");
-    $(case1).css("display", "block");
-    $("body").css("overflow", "hidden");
+  function toggleScroll() {
+    body = document.querySelector("body")
+    if (body.style.overflow === "hidden") {
+      body.style.overflow = "auto"
+    } else {
+      body.style.overflow = "hidden"
+    }
+  }
+
+  function openModal(index) {
+    modalBlock = cases[index]
+    modalBlock.classList.remove("slideOutLeft");
+    modalBlock.classList.add("slideInLeft");
+    modalBlock.style.display = "block";
+    toggleScroll()
     setTimeout(() => {
-      $(case1).removeClass("slideInLeft");
+      modalBlock.classList.remove("slideInLeft");
     }, 1000)
-  })
+  }
 
-  portfolio2.addEventListener("click", function() {
-    $(case2).removeClass("slideOutRight");
-    $(case2).addClass("slideInRight");
-    $(case2).css("display", "block");
-    $("body").css("overflow", "hidden");
+  function closeModal(index) {
+    modalBlock = cases[index]
+    modalBlock.classList.add("slideOutLeft");
+    toggleScroll()
     setTimeout(() => {
-      $(case2).removeClass("slideInRight");
-    }, 1000)
-  })
-
-  case1Close.addEventListener("click", function() {
-    $(case1).addClass("slideOutLeft");
-    $("body").css("overflow", "auto");
-    setTimeout(() => {
-      $(case1).removeClass("slideInLeft");
+      modalBlock.classList.remove("slideInLeft");
     }, 200)
-  })
+  }
 
-  case2Close.addEventListener("click", function() {
-    $(case2).addClass("slideOutRight");
-    $("body").css("overflow", "auto");
-    setTimeout(() => {
-      $(case2).removeClass("slideInRight");
-    }, 200)
-  })
+  for (let i = 0; i < portfolioLinks.length; i++) {
+    let element = portfolioLinks[i]
+    element.addEventListener("click", () => openModal(i))
+  }
+
+  for (let i = 0; i < closeButtons.length; i++) {
+    let element = closeButtons[i]
+    element.addEventListener("click", () => closeModal(i))
+  }
 
   $(".form-button").each(function(){
     $(this).click(() => {

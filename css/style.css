@@ -187,62 +187,62 @@ input:active, textarea:active {
   z-index: 990;
 }
 
-.case1 .container, .case2 .container {
+.case .container {
   position: relative;
   padding-top: 130px;
   padding-bottom: 70px;
 }
 @media (max-width: 1120px) {
-  .case1 .container, .case2 .container {
+  .case .container {
     padding-top: 41px;
     padding-bottom: 33px;
   }
 }
-.case1__title, .case2__title {
+.case__title {
   margin-bottom: 68px;
 }
 @media (max-width: 1120px) {
-  .case1__title, .case2__title {
+  .case__title {
     margin-bottom: 30px;
     max-width: 200px;
     margin-left: auto;
     margin-right: auto;
   }
 }
-.case1__description, .case2__description {
+.case__description {
   font-size: 36px;
   margin-bottom: 30px;
 }
 @media (max-width: 1120px) {
-  .case1__description, .case2__description {
+  .case__description {
     font-size: 18px;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
   }
-  .case1__description > br, .case2__description > br {
+  .case__description > br {
     display: none;
   }
 }
-.case1__description > a, .case2__description > a {
+.case__description > a {
   color: #D54A24;
   transition: color 300ms;
 }
-.case1__description > a:hover, .case2__description > a:hover {
+.case__description > a:hover {
   color: #C52F06;
   text-decoration: underline;
 }
-.case1__img, .case2__img {
+.case__img {
   cursor: pointer;
   margin-bottom: 70px;
   max-width: 100%;
 }
 @media (max-width: 1120px) {
-  .case1__img, .case2__img {
+  .case__img {
     margin-bottom: 34px;
   }
 }
-.case1__button, .case2__button {
+.case__button {
   margin-left: auto;
   margin-right: auto;
 }
@@ -652,6 +652,26 @@ input:active, textarea:active {
     display: none;
   }
 }
+.portfolio__bg_betanote {
+  position: absolute;
+  background-image: url("../assets/img/portfolio/BetaNote.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  visibility: hidden;
+  transition: visibility 100ms;
+}
+@media (max-width: 1120px) {
+  .portfolio__bg_betanote {
+    display: none;
+  }
+}
 .portfolio .container {
   padding-top: 130px;
   padding-bottom: 430px;
@@ -682,6 +702,7 @@ input:active, textarea:active {
   font-size: 38px;
   transition: color 300ms;
   cursor: pointer;
+  margin-bottom: 64px;
 }
 @media (max-width: 1120px) {
   .portfolio__link {
@@ -691,8 +712,8 @@ input:active, textarea:active {
     text-align: center;
   }
 }
-.portfolio__link:nth-child(1) {
-  margin-bottom: 64px;
+.portfolio__link:last-child {
+  margin-bottom: 0;
 }
 .portfolio__link:hover {
   color: #C52F06;

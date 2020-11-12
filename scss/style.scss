@@ -125,7 +125,7 @@ input:active, textarea:active {outline:none;}
   z-index: 990;
 }
 
-.case1, .case2{
+.case{
 
   .container{
     position: relative;
@@ -616,7 +616,23 @@ input:active, textarea:active {outline:none;}
       display: none;
     };
   }
+  
+  &__bg_betanote{
+    position: absolute;
+    @include bgImage ("../assets/img/portfolio/BetaNote.jpg");
+    background-size: contain;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    visibility: hidden;
+    transition: visibility 100ms;
 
+    @media (max-width: 1120px) {
+      display: none;
+    };
+  }
   .container {
     padding-top: 130px;
     padding-bottom: 430px;
@@ -648,6 +664,7 @@ input:active, textarea:active {outline:none;}
     font-size: 38px;
     transition: color 300ms;
     cursor: pointer;
+    margin-bottom: 64px;
 
     @media (max-width: 1120px) {
       display: block;
@@ -656,8 +673,8 @@ input:active, textarea:active {outline:none;}
       text-align: center;
     };
 
-    &:nth-child(1) {
-      margin-bottom: 64px;
+    &:last-child {
+      margin-bottom: 0;
     }
 
     &:hover{
@@ -681,7 +698,7 @@ input:active, textarea:active {outline:none;}
   }
 }
 
-//Portfolio
+//contacts
 //---------------------------
 
 .contacts{
