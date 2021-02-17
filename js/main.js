@@ -117,13 +117,14 @@ $(document).ready(function() {
         closeButtons = document.querySelectorAll(".modal__close"),
         formClose = document.querySelector(".form__close");
 
-  function toggleScroll() {
+  function disableScroll() {
     body = document.querySelector("body")
-    if (body.style.overflow === "hidden") {
-      body.style.overflow = "auto"
-    } else {
-      body.style.overflow = "hidden"
-    }
+    body.style.overflow = "hidden"
+  }
+
+  function enableScroll() {
+    body = document.querySelector("body")
+    body.style.overflow = "auto"
   }
 
   function openModal(index) {
@@ -131,7 +132,7 @@ $(document).ready(function() {
     modalBlock.classList.remove("slideOutLeft");
     modalBlock.classList.add("slideInLeft");
     modalBlock.style.display = "block";
-    toggleScroll()
+    disableScroll()
     setTimeout(() => {
       modalBlock.classList.remove("slideInLeft");
     }, 1000)
@@ -140,7 +141,7 @@ $(document).ready(function() {
   function closeModal(index) {
     modalBlock = cases[index]
     modalBlock.classList.add("slideOutLeft");
-    toggleScroll()
+    enableScroll()
     setTimeout(() => {
       modalBlock.classList.remove("slideInLeft");
     }, 200)
