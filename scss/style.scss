@@ -143,8 +143,8 @@ input:active, textarea:active {outline:none;}
     margin-bottom: 45px;
 
     @media (max-width: 1120px) {
+      font-size: 24px;
       margin-bottom: 30px;
-      max-width: 200px;
       margin-left: auto;
       margin-right: auto;
     };
@@ -156,7 +156,7 @@ input:active, textarea:active {outline:none;}
 
     @media (max-width: 1120px) {
       font-size: 18px;
-      max-width: 500px;
+      padding: 0 15px;
       margin-left: auto;
       margin-right: auto;
 
