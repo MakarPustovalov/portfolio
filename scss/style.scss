@@ -139,7 +139,8 @@ input:active, textarea:active {outline:none;}
   }
 
   &__title{
-    margin-bottom: 68px;
+    font-size: 42px;
+    margin-bottom: 45px;
 
     @media (max-width: 1120px) {
       margin-bottom: 30px;
@@ -150,7 +151,7 @@ input:active, textarea:active {outline:none;}
   }
 
   &__description{
-    font-size: 36px;
+    font-size: 24px;
     margin-bottom: 30px;
 
     @media (max-width: 1120px) {
@@ -568,7 +569,8 @@ input:active, textarea:active {outline:none;}
   }
 
   &__item-description{
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: 400;
 
     @media (max-width: 1120px) {
       font-size: 16px;
@@ -633,6 +635,7 @@ input:active, textarea:active {outline:none;}
       display: none;
     };
   }
+
   .container {
     padding-top: 130px;
     padding-bottom: 430px;
